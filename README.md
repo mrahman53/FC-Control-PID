@@ -2,13 +2,6 @@
 
 This project is about Controlling the Quadrotor in C++.
 
-For easy navigation throughout this document, here is an outline:
-
- - [Development environment setup](#development-environment-setup)
- - [Simulator walkthrough](#simulator-walkthrough)
- - [The tasks](#the-tasks)
- - [Evaluation](#evaluation)
-
 
 ## Development Environment Setup ##
 
@@ -130,7 +123,7 @@ There are a handful of keyboard / mouse commands to help with the simulator itse
  - Space - pause simulation
 
 
-## The Tasks Implemented##
+## The Tasks Implemented
 
 For this controller project, implementation and tuning has been done in several steps.
 
