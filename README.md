@@ -122,6 +122,10 @@ There are a handful of keyboard / mouse commands to help with the simulator itse
  - R - reset simulation
  - Space - pause simulation
 
+## PID Diagram ##
+This PID diagram is taken from class notes:
+
+![pid](https://user-images.githubusercontent.com/1839661/42292040-a8c60c5a-7f9d-11e8-9dca-df7e85523518.png)
 
 ## The Tasks Implemented
 
