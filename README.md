@@ -134,6 +134,12 @@ For this controller project, implementation and tuning has been done in several 
 
 3. **Parameter Ratios**: derivation of the ratio of velocity proportional gain to position proportional gain for a critically damped double integrator system. The ratio of `kpV / kpP` should be 4.
 
+### Scenario 1 ###
+The drone mass is adjusted in (QuadControlParams.txt) until it prevent falling.
+scenario-1.swf
+
+PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 seconds
+
 ### Body rate and roll/pitch control (scenario 2) ###
 
 First, I implement the body rate and roll / pitch control.  For the simulation, used `Scenario 2`.  In this scenario, quad was above the origin.  It is created with a small initial rotation speed about its roll axis. The controller needed to stabilize the rotational motion and bring the vehicle back to level attitude.
