@@ -179,29 +179,29 @@ Lateral position controller is a PID controller to control acceleration on X and
  - implemented the code in the function `YawControl()`
  - tuned parameters `kpYaw` and the 3rd (z) component of `kpPQR`
 
-###Writeup:###
+###cWriteup: ###
 
-####Body Rate Controller Implementation####
+#### Body Rate Controller Implementation ####
 The body rate control is implemented in src/QuadControl::BodyRateControl method from line 93 to 119.
 Body Rate control is implemented as proportional controller.
 
-####Roll Pitch Controller Implementation####
+#### Roll Pitch Controller Implementation ####
 The roll pitch controller is implemented in src/QuadControl::RollPitchControl method from line 122 to 168.
 A P controller to the elements R13 and R23 of the rotation matrix from body-frame accelerations and world frame accelerations.
 
-####Altitude Controller Implementation ####
+#### Altitude Controller Implementation ####
 The altitude control is implemented in src/QuadControl::AltitudeControl method from line 170 to 213.
 Altitude controller is a PD controller to control the acceleration meaning the thrust needed to control the altitude.
 
-####Lateral Position Controller Implementation####
+#### Lateral Position Controller Implementation ####
 The lateral position control is implemented in src/QuadControl::LateralPositionControl method from line 216 to 271.
 Lateral position controller is a PID controller to control acceleration on X and Y axis.
 
-####Yaw controller implementation####
+#### Yaw controller implementation ####
 Proportional Yaw controller is implemented in src/QuadControl::YawControl method from line 274 to 306.
 First set kpYaw,kpPosXY, kpVelXY, kpPosZ and kpVelZ to zero. Then start tuning from the altitude controller to the yaw controller.
 
-####Collective Thrust and Moment converted to the individual motor thrust command.l is the drone arm length over square root of two.
+#### Collective Thrust and Moment converted to the individual motor thrust command.l is the drone arm length over square root of two.
 and kappa is the drag/thrust ratio. ####
 The calculation for the motor commands is implemented in src/QuadControl::GenerateMotorCommands method from line 58 to 93.
 
