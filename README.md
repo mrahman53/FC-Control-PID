@@ -179,7 +179,7 @@ Lateral position controller is a PID controller to control acceleration on X and
  - implemented the code in the function `YawControl()`
  - tuned parameters `kpYaw` and the 3rd (z) component of `kpPQR`
 
-###cWriteup: ###
+### Writeup: ###
 
 #### Body Rate Controller Implementation ####
 The body rate control is implemented in src/QuadControl::BodyRateControl method from line 93 to 119.
