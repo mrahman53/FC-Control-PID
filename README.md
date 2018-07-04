@@ -123,8 +123,12 @@ There are a handful of keyboard / mouse commands to help with the simulator itse
  - Space - pause simulation
 
 ## PID Diagram ##
-This PID diagram is taken from class notes:
+This project is about developing Cascade PID controller for drone.
 
+A block diagram representation of the basic PID controller is shown below.
+![basic pid](https://user-images.githubusercontent.com/1839661/42292121-2f280302-7f9e-11e8-8b3d-0eaa071e4623.png)
+
+A block diagram demonstrating these nested control loops (Cascade PID controller) is shown below.
 ![pid](https://user-images.githubusercontent.com/1839661/42292040-a8c60c5a-7f9d-11e8-9dca-df7e85523518.png)
 
 ## The Tasks Implemented
