@@ -183,9 +183,9 @@ Lateral position controller is a PID controller to control acceleration on X and
 
 #### Body Rate Controller Implementation ####
 
-The body rate control is implemented in src/QuadControl::BodyRateControl method from line 93 to 119.
+The body rate controller is implemented in src/QuadControl::BodyRateControl method from line 93 to 119.
 
-Body Rate control is implemented as proportional controller.
+Body Rate controller is implemented as proportional controller.
 
 #### Roll Pitch Controller Implementation ####
 
@@ -195,13 +195,13 @@ A P controller to the elements R13 and R23 of the rotation matrix from body-fram
 
 #### Altitude Controller Implementation ####
 
-The altitude control is implemented in src/QuadControl::AltitudeControl method from line 170 to 213.
+The altitude controller is implemented in src/QuadControl::AltitudeControl method from line 170 to 213.
 
 Altitude controller is a PD controller to control the acceleration meaning the thrust needed to control the altitude.
 
 #### Lateral Position Controller Implementation ####
 
-The lateral position control is implemented in src/QuadControl::LateralPositionControl method from line 216 to 271.
+The lateral position controller is implemented in src/QuadControl::LateralPositionControl method from line 216 to 271.
 
 Lateral position controller is a PID controller to control acceleration on X and Y axis.
 
