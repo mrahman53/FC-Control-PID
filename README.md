@@ -136,7 +136,8 @@ For this controller project, implementation and tuning has been done in several 
 
 ### Scenario 1 ###
 The drone mass is adjusted in (QuadControlParams.txt) until it prevent falling.
-scenario-1.swf
+
+Video clips: https://www.screencast.com/t/pD7Jel8ZhSg
 
 PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 seconds
 
@@ -146,8 +147,11 @@ First, I implement the body rate and roll / pitch control.  For the simulation, 
 
 To accomplish this, following implementation steps were taken:
 
+F1,F2,F3 and F4 are the motor's thrust, tao(x,y,z) are the moments on each direction, Ft is the total thrust, kappa is the drag/thrust ratio and l is the drone arm length over square root of two.
+
 1. Implement body rate control
 
+Body Rate control is implemented as proportional controller.
  - implemented the code in the function `GenerateMotorCommands()`
  - implemented the code in the function `BodyRateControl()`
  - Tuned `kpPQR` in `QuadControlParams.txt` to get the vehicle to stop spinning quickly but not overshoot
@@ -155,12 +159,17 @@ To accomplish this, following implementation steps were taken:
 
 2. Implement roll / pitch control
 
+Apply a P controller to the elements R13 and R23 of the rotation matrix from body-frame accelerations and world frame accelerations:
+
  - implemented the code in the function `RollPitchControl()`
  - Tuned `kpBank` in `QuadControlParams.txt` to minimize settling time but avoid too much overshoot
 
 
 
 ### Position/velocity and yaw angle control (scenario 3) ###
+
+AltitudeControl: This is a PD controller to control the acceleration meaning the thrust needed to control the altitude.
+Lateral position controller is a PID controller to control acceleration on X and Y axis.
 
  - implemented the code in the function `LateralPositionControl()`
  - implemented the code in the function `AltitudeControl()`
@@ -170,4 +179,29 @@ To accomplish this, following implementation steps were taken:
  - implemented the code in the function `YawControl()`
  - tuned parameters `kpYaw` and the 3rd (z) component of `kpPQR`
 
+###Writeup:###
+
+#Body Rate Controller Implementation#
+The body rate control is implemented in src/QuadControl::BodyRateControl method from line 93 to 119.
+Body Rate control is implemented as proportional controller.
+
+#Roll Pitch Controller Implementation#
+The roll pitch controller is implemented in src/QuadControl::RollPitchControl method from line 122 to 168.
+A P controller to the elements R13 and R23 of the rotation matrix from body-frame accelerations and world frame accelerations.
+
+#Altitude Controller Implementation #
+The altitude control is implemented in src/QuadControl::AltitudeControl method from line 170 to 213.
+Altitude controller is a PD controller to control the acceleration meaning the thrust needed to control the altitude.
+
+#Lateral Position Controller Implementation#
+The lateral position control is implemented in src/QuadControl::LateralPositionControl method from line 216 to 271.
+Lateral position controller is a PID controller to control acceleration on X and Y axis.
+
+#Yaw controller implementation#
+Proportional Yaw controller is implemented in src/QuadControl::YawControl method from line 274 to 306.
+First set kpYaw,kpPosXY, kpVelXY, kpPosZ and kpVelZ to zero. Then start tuning from the altitude controller to the yaw controller.
+
+#Collective Thrust and Moment converted to the individual motor thrust command.l is the drone arm length over square root of two.
+and kappa is the drag/thrust ratio. #
+The calculation for the motor commands is implemented in src/QuadControl::GenerateMotorCommands method from line 58 to 93.
 
