@@ -177,12 +177,14 @@ Apply a P controller to the elements R13 and R23 of the rotation matrix from bod
 ### Position/velocity and yaw angle control (scenario 3) ###
 
 AltitudeControl: This is a PD controller to control the acceleration meaning the thrust needed to control the altitude.
-Lateral position controller is a PID controller to control acceleration on X and Y axis.
 
 ![altitude equation](https://user-images.githubusercontent.com/1839661/42292457-b463414c-7fa0-11e8-9716-bf5cd6b623fe.png)
 
+- implemented the code in the function `AltitudeControl()`
+
+Lateral position controller is a PID controller to control acceleration on X and Y axis.
+
  - implemented the code in the function `LateralPositionControl()`
- - implemented the code in the function `AltitudeControl()`
  - tuned parameters `kpPosZ` and `kpPosZ`
  - tuned parameters `kpVelXY` and `kpVelZ`
 
