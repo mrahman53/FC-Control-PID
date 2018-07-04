@@ -155,7 +155,7 @@ First, I implement the body rate and roll / pitch control.  For the simulation, 
 
 To accomplish this, following implementation steps were taken:
 
-F1,F2,F3 and F4 are the motor's thrust, tao(x,y,z) are the moments on each direction, Ft is the total thrust, kappa is the drag/thrust ratio and l is the drone arm length over square root of two.
+F0,F1,F2 and F4 are the motor's thrust, tao(x,y,z) are the moments on each direction, Ft is the total thrust, kappa is the drag/thrust ratio and l is the drone arm length over square root of two.
 
 1. Implement body rate control
 
@@ -178,6 +178,8 @@ Apply a P controller to the elements R13 and R23 of the rotation matrix from bod
 
 AltitudeControl: This is a PD controller to control the acceleration meaning the thrust needed to control the altitude.
 Lateral position controller is a PID controller to control acceleration on X and Y axis.
+
+![altitude equation](https://user-images.githubusercontent.com/1839661/42292457-b463414c-7fa0-11e8-9716-bf5cd6b623fe.png)
 
  - implemented the code in the function `LateralPositionControl()`
  - implemented the code in the function `AltitudeControl()`
